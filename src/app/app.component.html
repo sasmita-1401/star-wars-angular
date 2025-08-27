@@ -1,0 +1,50 @@
+<div class="app">
+  <!-- Header -->
+  <header class="header">
+    <h1>STAR WARS</h1>
+    <span class="project-name">THE SWAPI PROJECT</span>
+  </header>
+
+  <div class="content">
+    <!-- Sidebar Filters -->
+    <aside class="sidebar">
+      <h3>FILTERS</h3>
+
+      <label>Movie Name</label>
+      <select [(ngModel)]="selectedMovie" (change)="applyFilters()">
+        <option value="">All</option>
+        <option *ngFor="let film of films" [value]="film.url">{{ film.title }}</option>
+      </select>
+
+      <label>Species</label>
+      <select [(ngModel)]="selectedSpecies" (change)="applyFilters()">
+        <option value="">All</option>
+        <option *ngFor="let s of species" [value]="s.url">{{ s.name }}</option>
+      </select>
+
+      <label>Vehicle</label>
+      <select [(ngModel)]="selectedVehicle" (change)="applyFilters()">
+        <option value="">All</option>
+        <option *ngFor="let v of vehicles" [value]="v.url">{{ v.name }}</option>
+      </select>
+
+      <label>Starship</label>
+      <select [(ngModel)]="selectedStarship" (change)="applyFilters()">
+        <option value="">All</option>
+        <option *ngFor="let s of starships" [value]="s.url">{{ s.name }}</option>
+      </select>
+
+      <label>Birth Year</label>
+      <input type="number" placeholder="Min" [(ngModel)]="birthYearRange.min" (input)="applyFilters()" />
+      <input type="number" placeholder="Max" [(ngModel)]="birthYearRange.max" (input)="applyFilters()" />
+
+      <button class="search-btn" (click)="applyFilters()">SEARCH</button>
+    </aside>
+
+    <!-- Results or Details -->
+    <main class="results">
+      <!-- 👇 Router will swap between table view and detail view -->
+      <router-outlet></router-outlet>
+    </main>
+  </div>
+</div>

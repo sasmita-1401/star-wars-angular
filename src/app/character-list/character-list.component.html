@@ -1,0 +1,37 @@
+<!-- character-list.component.html -->
+<div class="app">
+  <!-- Header -->
+  <header class="header">
+    <h1>STAR WARS</h1>
+    <span class="project-name">THE SWAPI PROJECT</span>
+  </header>
+
+  <div class="content">
+
+    <!-- Results or Details -->
+    <main class="results">
+     <table>
+  <thead>
+    <tr>
+      <th>Sl No.</th>
+      <th>Character Name</th>
+      <th>Species</th>
+      <th>Birth Year</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let c of paginatedCharacters; let i = index">
+      <td>{{ i + 1 + (currentPage - 1) * pageSize }}</td>
+      <td>
+       <a [routerLink]="['/character', getCharacterId(c.url)]">
+          {{ c.name }}
+        </a>
+      </td>
+      <td>{{ c.species[0] || 'Unknown' }}</td>
+      <td>{{ c.birth_year }}</td>
+    </tr>
+  </tbody>
+</table>
+    </main>
+  </div>
+</div>

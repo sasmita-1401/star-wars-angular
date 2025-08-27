@@ -1,0 +1,43 @@
+.character-detail {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+
+  .profile-card {
+    flex: 1;
+    background: #fff;
+    border-radius: 12px;
+    padding: 16px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+
+    .avatar {
+      font-size: 48px;
+      text-align: center;
+      margin-bottom: 16px;
+    }
+
+    .info p {
+      margin: 4px 0;
+    }
+  }
+
+  .details {
+    flex: 2;
+    background: #fff;
+    border-radius: 12px;
+    padding: 16px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+
+    h3 {
+      margin-top: 20px;
+      color: #046c4e;
+    }
+
+    .card {
+      background: #f6f6f6;
+      border-radius: 8px;
+      padding: 8px;
+      margin-bottom: 8px;
+    }
+  }
+}

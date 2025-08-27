@@ -1,0 +1,38 @@
+<div class="character-detail">
+  <!-- Left Panel -->
+  <aside class="profile-card">
+    <div class="avatar">
+      <i class="fas fa-globe"></i>
+    </div>
+    <div class="info">
+      <h2>{{ character?.name }}</h2>
+      <p><strong>Born:</strong> {{ character?.birth_year }}</p>
+      <p><strong>Gender:</strong> {{ character?.gender }}</p>
+      <p><strong>Height:</strong> {{ character?.height }} cm</p>
+      <p><strong>Mass:</strong> {{ character?.mass }} kg</p>
+      <p><strong>Hair color:</strong> {{ character?.hair_color }}</p>
+      <p><strong>Eye color:</strong> {{ character?.eye_color }}</p>
+      <p><strong>Skin color:</strong> {{ character?.skin_color }}</p>
+      <p><strong>Planet:</strong> {{ homeworldName }}</p>
+      <p><strong>Species:</strong> {{ speciesName }}</p>
+    </div>
+  </aside>
+
+  <!-- Right Panel -->
+  <section class="details">
+    <h3>FILMS</h3>
+    <div class="card" *ngFor="let m of movies">
+      {{ m.title }}
+    </div>
+
+    <h3>VEHICLES</h3>
+    <div class="card" *ngFor="let v of vehicles">
+      {{ v.name }}
+    </div>
+
+    <h3>STARSHIPS</h3>
+    <div class="card" *ngFor="let s of starships">
+      {{ s.name }}
+    </div>
+  </section>
+</div>
